@@ -81,7 +81,7 @@ scrollMenu();
 //     )
 // }
 
-scrollToGame();
+// scrollToGame();
 
 function accShow() {
     var acc = document.getElementsByClassName("accordion");
@@ -91,10 +91,10 @@ function accShow() {
         acc[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
             } else {
-                panel.style.display = "block";
+                panel.style.maxHeight = panel.scrollHeight + "px";
             }
         });
     }
@@ -113,9 +113,15 @@ function handleClickPlay() {
     let modal = document.querySelector('.popupvideo')
     let close = document.querySelector('.btnclose')
     let play = document.querySelector('.playicon')
-    // let watch = document.querySelector('.watch-btn')
+    let watch = document.querySelector('.watch__btn')
     const player = document.querySelector('.popupvideo__inner-iframe iframe')
     play.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        player.setAttribute('src', `${URL}?autoplay=1`)
+        modal.classList.add('active');
+    })
+    watch.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         player.setAttribute('src', `${URL}?autoplay=1`)

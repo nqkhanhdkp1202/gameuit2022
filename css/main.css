@@ -1,11 +1,12 @@
 :root {
   --black: #000000;
   --white: #ffffff;
-  --font-xs: 10px;
-  --font-s: 13px;
-  --font-m: 16px;
-  --font-l: 20px;
-  --font-xl: 30px;
+  --font-xs: 14px;
+  --font-s: 16px;
+  --font-m: 18px;
+  --font-l: 22px;
+  --font-xl: 34px;
+  --font-xxl: 42px;
   --header-h: 90px;
   --gray: #3b3b3b;
 }
@@ -113,12 +114,12 @@ body {
 
 .--h1 {
   font-weight: 900;
-  font-size: var(--font-xl);
+  font-size: var(--font-xxl);
   font-weight: 700;
 }
 
 .--h2 {
-  font-size: var(--font-l);
+  font-size: var(--font-xl);
   margin-bottom: 24px;
   font-weight: 700;
 }
@@ -131,7 +132,7 @@ body {
 
 .--para {
   font-size: var(--font-s);
-  line-height: 2;
+  line-height: 2.5;
   margin-bottom: 24px;
 }
 
@@ -162,6 +163,7 @@ body {
   transition: max-height 0.2s ease-out;
   font-size: var(--font-s);
   color: var(--black);
+  line-height: 2;
 }
 
 .panel p {

@@ -124,20 +124,20 @@
 
 .herosc .herosc__group {
   position: absolute;
-  bottom: 28vh;
+  bottom: 20vh;
 }
 
 .herosc .herosc__group .name {
   margin-bottom: 24px;
   max-width: 580px;
   line-height: 1.2;
-  color: var(--white);
+  color: var(--black);
 }
 
 .herosc .herosc__group .para {
   max-width: 450px;
   margin-bottom: 30px;
-  color: var(--white);
+  color: var(--black);
 }
 
 .play-btn {
@@ -160,6 +160,10 @@
   column-gap: 56px;
   grid-template-columns: 6fr 4fr;
   background: rgba(0, 0, 0, 0.8);
+}
+
+.storiessc .--gif {
+  max-width: 100%;
 }
 
 .storiessc .storiessc__left .subtitle {
@@ -224,7 +228,7 @@
 }
 
 .aboutsc .container {
-  padding: 48px 24px;
+  padding: 12px 24px;
   background: rgba(0, 0, 0, 0.8);
 }
 
