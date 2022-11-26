@@ -151,6 +151,16 @@
   background: #333;
 }
 
+.inside {
+  max-width: 100%;
+}
+
+.inside img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 .storiessc .container {
   display: grid;
   padding: 0 128px;

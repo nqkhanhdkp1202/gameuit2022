@@ -2,7 +2,7 @@ function changeColorMenu() {
     const header = document.querySelector('.header') //Lấy phần tử header
     document.addEventListener('scroll', function () {
         let scrollY = window.pageYOffset //Lấy chiều cao đã scroll trong cửa sổ trình duyệt
-        if (scrollY > 500 / 2) { //Nếu scroll tới vị trí dưới phân nửa của slider
+        if (scrollY > 500 / 3) { //Nếu scroll tới vị trí dưới phân nửa của slider
             header.classList.add('show') // Thêm class show vào header
         }
         else { // Nếu scroll đến vị trí trên nửa slider
@@ -46,7 +46,8 @@ function scrollMenu() {
         element.addEventListener('click', function (e) { //Nghe sự kiện click vào thẻ a 
             e.preventDefault(); //Ngăn chuyển trang
             window.scrollTo({ //Scroll cửa sổ trình duyệt tới vị trí top = top của section trừ cho chiều cao của header
-                top: section.offsetTop - header.offsetHeight
+                top: section.offsetTop - header.offsetHeight,
+                behavior: 'smooth'
             })
             removeActiveMenu(); //Gọi hàm xóa class active menu 
             this.classList.add('active'); //Thêm class active vào thẻ a vừa click
