@@ -68,7 +68,22 @@ function scrollMenu() {
 }
 scrollMenu();
 
-function accordionShow() {
+// function scrollToGame() {
+//     let playbtn = document.querySelector('.play__btn')
+//     playbtn.addEventListener('click',function (e) { //Nghe sự kiện click vào thẻ a 
+//             e.preventDefault(); //Ngăn chuyển trang
+//             window.scrollTo({ //Scroll cửa sổ trình duyệt tới vị trí top = top của section trừ cho chiều cao của header
+//                 top: section.offsetTop - header.offsetHeight,
+//                 behavior: 'smooth'
+//             })
+//             removeActiveMenu(); //Gọi hàm xóa class active menu 
+//             this.classList.add('active'); //Thêm class active vào thẻ a vừa click
+//     )
+// }
+
+scrollToGame();
+
+function accShow() {
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -76,28 +91,29 @@ function accordionShow() {
         acc[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
             } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.display = "block";
             }
         });
     }
 }
-accordionShow();
+
+accShow();
 
 function closeVideo() {
     const player = document.querySelector('.popupvideo__inner-iframe iframe')
     player.setAttribute('src', ``)
 }
 
-//Videos list 
+// Videos list 
 function handleClickPlay() {
     let URL = "https://www.youtube.com/embed/6GDBMpGgqTM";
     let modal = document.querySelector('.popupvideo')
     let close = document.querySelector('.btnclose')
     let play = document.querySelector('.playicon')
-    let watch = document.querySelector('.watch-btn')
+    // let watch = document.querySelector('.watch-btn')
     const player = document.querySelector('.popupvideo__inner-iframe iframe')
     play.addEventListener('click', function (e) {
         e.preventDefault();
@@ -105,12 +121,12 @@ function handleClickPlay() {
         player.setAttribute('src', `${URL}?autoplay=1`)
         modal.classList.add('active');
     })
-        watch.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        player.setAttribute('src', `${URL}?autoplay=1`)
-        modal.classList.add('active');
-    })
+    //     watch.addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     player.setAttribute('src', `${URL}?autoplay=1`)
+    //     modal.classList.add('active');
+    // })
     close.addEventListener('click', function () {
         modal.classList.remove('active')
         closeVideo();

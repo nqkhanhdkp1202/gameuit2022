@@ -42,7 +42,7 @@
     font-style: italic;
     font-display: swap;
 } */
-
+/* 
 @font-face {
   font-family: 'mi';
   src: url('../assets/fonts/RedHatDisplay-Italic.woff2') format('woff2'),
@@ -75,6 +75,15 @@
   src: url('../assets/fonts/RedHatDisplay-Bold.woff2') format('woff2'),
     url('../assets/fonts/RedHatDisplay-Bold.woff') format('woff');
   font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'mr';
+  src: url('../assets/fonts/FVFFernando08.woff2') format('woff2'),
+    url('../assets/fonts/FVFFernando08.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
